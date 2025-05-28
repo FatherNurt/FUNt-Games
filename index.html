@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FUNt Cosmos Simulation v1.0</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; color: #333; }
+    h1 { color: #004080; }
+    .section { margin-bottom: 30px; }
+    button { margin: 5px 0; padding: 10px 15px; font-size: 16px; }
+    .response { margin-top: 10px; background: #fff; padding: 10px; border-left: 4px solid #004080; }
+  </style>
+</head>
+<body>
+
+  <h1>🌌 FUNt Cosmos Simulation v1.0</h1>
+  <div class="section">
+    <p>Welcome to the FUNt Cosmos Simulation! Please select your education level:</p>
+    <button onclick="showLevel('K3')">1. K–3 (Kindergarten to Grade 3)</button>
+  </div>
+
+  <div id="K3" class="section" style="display:none;">
+    <h2>Welcome, Little Explorer!</h2>
+    <p>Choose a topic:</p>
+    <button onclick="showK3Response('A')">A) 🎨 Colors of the Rainbow</button><br>
+    <button onclick="showK3Response('B')">B) 🌍 Earth, Fire, Wind, Water</button><br>
+    <button onclick="showK3Response('C')">C) 🐾 Earth’s Subspecies</button><br>
+    <button onclick="showK3Response('D')">D) ❓ Ask Me Anything</button>
+
+    <div id="K3Response" class="response"></div>
+  </div>
+
+  <script>
+    function showLevel(level) {
+      document.getElementById('K3').style.display = level === 'K3' ? 'block' : 'none';
+    }
+
+    function showK3Response(choice) {
+      const responses = {
+        A: "🤖 What colors do you see in a rainbow? Say or type them!",
+        B: "🤖 Name something you've seen for each: Fire, Water, Earth, Wind.",
+        C: "🤖 What animals, plants, or fungi have you seen near you?",
+        D: "🤖 Ask anything! Try: What are stars? Can trees talk? Where does the sky end?"
+      };
+      document.getElementById('K3Response').innerText = responses[choice];
+    }
+  </script>
+
+</body>
+</html>
